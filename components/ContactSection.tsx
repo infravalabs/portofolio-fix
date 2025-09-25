@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { useForm } from "react-hook-form"
 import toast, { Toaster } from "react-hot-toast"
 import { ArrowRightIcon, EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline"
+import Script from "next/script"
 
 type FormData = {
   name: string
@@ -37,8 +38,36 @@ const ContactSection: React.FC = () => {
     }
   }
 
+  // JSON-LD schema untuk ContactPage
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "InfravaLabs",
+      "url": "https://www.infravalabs.com",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+62-361-123456",
+          "contactType": "customer service",
+          "areaServed": "ID",
+          "availableLanguage": ["English", "Indonesian"],
+          "email": "infravalbas@gmail.com"
+        }
+      ]
+    }
+  }
+
   return (
     <section id="contact" className="px-5 md:px-50 mt-20 md:mt-25 w-full scroll-mt-32">
+      {/* Inject JSON-LD Schema.org */}
+      <Script
+        id="contact-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
+
       <Toaster position="top-right" reverseOrder={false} />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-2">
 

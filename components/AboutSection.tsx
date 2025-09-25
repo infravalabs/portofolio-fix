@@ -34,24 +34,20 @@ const AboutSection = () => {
         
         {/* Images */}
         <div className="relative w-full md:w-100 lg:w-160 h-60 md:h-65 lg:h-85 order-1 md:order-1">
-          <div
-            className="absolute top-0 left-0 w-85 h-55 md:w-65 md:h-50 lg:w-120 lg:h-78"
-          >
+          <div className="absolute top-0 left-0 w-85 h-55 md:w-65 md:h-50 lg:w-120 lg:h-78">
             <Image
               src="/about.png"
-              alt="About Infrava Image Left"
+              alt="Team Infrava Labs working on IT solutions and web development"
               width={600}
               height={800}
               className="w-full h-full"
             />
           </div>
 
-          <div
-            className="absolute bottom-0 right-0 w-85 h-55 md:w-65 md:h-50 lg:w-120 lg:h-78"
-          >
+          <div className="absolute bottom-0 right-0 w-85 h-55 md:w-65 md:h-50 lg:w-120 lg:h-78">
             <Image
               src="/about.png"
-              alt="About Infrava Image Right"
+              alt="Infrava Labs providing laptop and computer hardware repair service"
               width={600}
               height={800}
               className="w-full h-full"
@@ -69,14 +65,16 @@ const AboutSection = () => {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6 }}
             >
-              <p className='text-dev-blue font-bold text-body-xxs-10 tracking-[0.2em]'>About Us</p>
-              <h2 className='text-[24px] md:text-[30px] lg:text-[38px] text-dev-black font-bold leading-tight tracking-normal'>
-                Smart IT Solutions by Professional Experts
+              <h2 className='text-dev-blue font-bold text-body-xxs-10 tracking-[0.2em]'>
+                About Us
               </h2>
-              <h5 className='text-body-sm-14 text-dev-grey font-medium text-justify'>
+              <h3 className='text-[24px] md:text-[30px] lg:text-[38px] text-dev-black font-bold leading-tight tracking-normal'>
+                Smart IT Solutions by Professional Experts
+              </h3>
+              <p className='text-body-sm-14 text-dev-grey font-medium text-justify'>
                 At InfravaLabs, we specialize in Web Development and Laptop & Computer Hardware Repair. 
                 Our mission is to deliver reliable digital solutions and technical support.
-              </h5>
+              </p>
             </motion.div>
 
             <motion.div
@@ -87,11 +85,12 @@ const AboutSection = () => {
               transition={{ duration: 0.6 }}
             >
               <Link 
-                href={"/about"} 
+                href="/about" 
+                title="Read more about Infrava Labs"
                 className='bg-dev-blue hover:bg-dev-blue-navy h-10 w-full md:w-50 md:h-12 justify-center text-dev-white font-semibold rounded-lg flex items-center gap-3 transition ease-in-out duration-200'
               >
                 <p className='text-body-xs-12'>Continue Reading</p>
-                <ArrowRightIcon width={16} height={16} fontWeight={1}/>
+                <ArrowRightIcon width={16} height={16}/>
               </Link>
             </motion.div>
           </div>
@@ -121,14 +120,12 @@ const AboutSection = () => {
           >
             <card.Icon width={28} height={28} className='text-dev-black shrink-0'/>
             <div className='flex flex-col gap-2'>
-              <h5 className='text-body-md-16 text-dev-black font-bold'>{card.title}</h5>
+              <h4 className='text-body-md-16 text-dev-black font-bold'>{card.title}</h4>
               <p className='text-body-sm-14 text-dev-grey font-medium text-justify'>{card.desc}</p>
             </div>
           </motion.div>
         ))}
       </motion.div>
-
-
     </div>
   )
 }

@@ -3,6 +3,7 @@
 import { PlusCircleIcon, MinusCircleIcon } from '@heroicons/react/24/solid'
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from "framer-motion"
+import Script from 'next/script'
 
 const faqContent = [
   {
@@ -54,10 +55,30 @@ const Faq = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   }
 
+  // Generate FAQ JSON-LD
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqContent.map((faq) => ({
+      "@type": "Question",
+      "name": faq.title,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.description,
+      },
+    })),
+  }
+
   return (
     <div id='faq' className="px-5 md:px-50 gap-2 mt-20 scroll-mt-32">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-1">
+      {/* JSON-LD Schema.org for FAQ */}
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-1">
         {/* LEFT SIDE: Sticky Title & Description */}
         <motion.div
           className="flex flex-col px-2.5 py-2.5 md:gap-2 gap-1"

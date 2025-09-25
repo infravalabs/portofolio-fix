@@ -7,7 +7,7 @@ import { EyeIcon, XMarkIcon, ChevronRightIcon } from "@heroicons/react/24/outlin
 const ProjectSection = () => {
   const [activeProject, setActiveProject] = useState("/mamaku.png")
   const [isPreviewOpen, setIsPreviewOpen] = useState(false)
-  const [projectOpen, setProjectOpen] = useState(true) // default terbuka
+  const [projectOpen, setProjectOpen] = useState(true)
   const [hardwareOpen, setHardwareOpen] = useState(false)
 
   const projects = [
@@ -55,8 +55,6 @@ const ProjectSection = () => {
     }
   ];
 
-
-
   const containerVariants = {
     hidden: {},
     visible: { transition: { staggerChildren: 0.1 } }
@@ -68,10 +66,10 @@ const ProjectSection = () => {
   }
 
   return (
-    <div id='projects' className='md:px-50 mt-10 md:mt-20 scroll-mt-20 flex flex-col gap-5 md:gap-5'>
-
-      {/* Header clickable untuk toggle */}
-      <div
+    <section id='projects' className='md:px-50 mt-10 md:mt-20 scroll-mt-20 flex flex-col gap-5 md:gap-5'>
+      
+      {/* Web Development Section */}
+      <header
         onClick={() => setProjectOpen(!projectOpen)}
         className="flex items-center gap-2 cursor-pointer select-none px-5 mb2"
       >
@@ -81,10 +79,11 @@ const ProjectSection = () => {
           className={`text-dev-black transition-transform duration-300 ${projectOpen ? "rotate-90" : ""}`}
         />
         <h2 className='text-[24px] md:text-[38px] text-dev-black font-bold leading-tight tracking-normal'>
-          Web Development
+          Web Development Projects
         </h2>
-      </div>
-      {/* Grid kiri-kanan ikut hilang/muncul */}
+      </header>
+
+      {/* Grid Project */}
       <AnimatePresence>
         {projectOpen && (
           <motion.div
@@ -95,8 +94,8 @@ const ProjectSection = () => {
             transition={{ duration: 0.4, ease: "easeInOut" }}
           >
             {/* LEFT SIDE */}
-            <motion.div
-              className='flex flex-col gap-3 px-5 py-10'
+            <motion.article
+              className='flex flex-col gap-3 px-5 py-10 order-2 md:order-1'
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
@@ -106,7 +105,7 @@ const ProjectSection = () => {
                 className='text-dev-blue font-bold text-body-xxs-10 tracking-[0.2em]'
                 variants={itemVariants}
               >
-                Our Beloved Project
+                Our Beloved Projects
               </motion.p>
 
               <motion.div
@@ -128,13 +127,13 @@ const ProjectSection = () => {
                   >
                     <Image
                       src={project.img}
-                      alt={project.title}
+                      alt={`${project.title} - ${project.desc}`}
                       width={600}
                       height={400}
                       className='w-40 h-32'
                     />
                     <div className='flex flex-col gap-3'>
-                      <h5 className='text-body-lg-20 md:text-[24px] font-bold'>{project.title}</h5>
+                      <h3 className='text-body-lg-20 md:text-[24px] font-bold'>{project.title}</h3>
                       <p className='text-body-xs-12 font-medium text-justify'>
                         {project.desc}
                       </p>
@@ -142,13 +141,13 @@ const ProjectSection = () => {
                   </motion.div>
                 ))}
               </motion.div>
-            </motion.div>
+            </motion.article>
 
-            {/* RIGHT SIDE: Mac + Preview */}
-            <div className="relative flex justify-center items-center">
+            {/* RIGHT SIDE */}
+            <div className="relative flex justify-center items-center order-1 md:order-2">
               <Image
                 src={"/mac.png"}
-                alt="Macbook"
+                alt="Macbook mockup"
                 width={600}
                 height={600}
                 className="w-full h-full"
@@ -166,17 +165,18 @@ const ProjectSection = () => {
                   >
                     <Image
                       src={activeProject}
-                      alt="Active Project"
+                      alt="Active project preview"
                       fill
                       className="object-cover"
                     />
 
-                    <div
+                    <button
                       onClick={() => setIsPreviewOpen(true)}
+                      aria-label="Open project preview"
                       className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300 cursor-pointer"
                     >
                       <EyeIcon className="w-12 h-12 text-white" />
-                    </div>
+                    </button>
                   </motion.div>
                 </AnimatePresence>
               </div>
@@ -203,12 +203,13 @@ const ProjectSection = () => {
             >
               <Image
                 src={activeProject}
-                alt="Preview Project"
+                alt="Full project preview"
                 fill
                 className="object-contain bg-black"
               />
               <button
                 onClick={() => setIsPreviewOpen(false)}
+                aria-label="Close preview"
                 className="absolute top-3 right-3 bg-black/60 hover:bg-black/80 p-2 rounded-full"
               >
                 <XMarkIcon className="w-6 h-6 text-white" />
@@ -217,8 +218,9 @@ const ProjectSection = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      {/* Header clickable untuk toggle */}
-      <div
+
+      {/* Hardware Section */}
+      <header
         onClick={() => setHardwareOpen(!hardwareOpen)}
         className="flex items-center gap-2 cursor-pointer select-none px-5 mb2"
       >
@@ -228,9 +230,10 @@ const ProjectSection = () => {
           className={`text-dev-black transition-transform duration-300 ${hardwareOpen ? "rotate-90" : ""}`}
         />
         <h2 className='text-[24px] md:text-[38px] text-dev-black font-bold leading-tight tracking-normal'>
-          Hardware 
+          Hardware Services
         </h2>
-      </div>
+      </header>
+
       <AnimatePresence initial={false}>
         {hardwareOpen && (
           <motion.div
@@ -242,9 +245,9 @@ const ProjectSection = () => {
             className="overflow-hidden"
           >
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6 items-start px-5 py-5'>
-              {hardwareProjects.map((hardware, index) => (
-                <motion.div
-                  key={index}
+              {hardwareProjects.map((hardware) => (
+                <motion.article
+                  key={hardware.id}
                   className="relative w-full h-64 perspective cursor-pointer"
                   whileHover={{ rotateY: 180 }}
                   transition={{ duration: 0.6 }}
@@ -254,28 +257,28 @@ const ProjectSection = () => {
                   <div className="absolute w-full h-full backface-hidden border border-gray-300 shadow-xl flex flex-col items-start justify-center">
                     <Image 
                       src={hardware.img} 
-                      alt="Hardware repair" 
+                      alt={`${hardware.title} service illustration`} 
                       width={300} 
                       height={200} 
                       className="object-cover w-full h-47" 
                     />
                     <div className='px-5 py-5'>
-                      <h5 className=" text-lg font-semibold text-dev-black">{hardware.title}</h5>
+                      <h3 className=" text-lg font-semibold text-dev-black">{hardware.title}</h3>
                     </div>
                   </div>
 
                   {/* BACK */}
                   <div className="absolute w-full h-full backface-hidden border border-gray-300 shadow-xl bg-gray-200 flex flex-col items-start px-5 py-5 rotate-y-180 overflow-y-auto">
-                    <h5 className="text-lg font-semibold mb-2 text-dev-black">{hardware.title}</h5>
+                    <h3 className="text-lg font-semibold mb-2 text-dev-black">{hardware.title}</h3>
                     <p className="text-sm text-justify text-gray-700 mb-3">{hardware.desc}</p>
                   </div>
-                </motion.div>
+                </motion.article>
               ))}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </section>
   )
 }
 

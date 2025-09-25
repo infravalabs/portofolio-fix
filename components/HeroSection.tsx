@@ -11,9 +11,7 @@ const HeroSection = () => {
   const container: Variants = {
     hidden: {},
     visible: { 
-      transition: { 
-        staggerChildren: 0.4 // muncul satu per satu tiap elemen
-      } 
+      transition: { staggerChildren: 0.4 } 
     }
   }
 
@@ -22,20 +20,25 @@ const HeroSection = () => {
     visible: { 
       opacity: 1, 
       y: 0, 
-      transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] } // ease custom untuk smooth
+      transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] } 
     }
   }
 
   return (
     <div id='home' className='lg:px-50 mt-10 md:mt-20 scroll-mt-32'>
       <div className='flex h-100 md:w-full md:h-135 bg-black lg:rounded-2xl relative'>
+        
+        {/* Hero Image */}
         <Image 
-          src={"/hero.png"}
-          alt='Hero Infrava'
+          src="/hero.png"
+          alt="Infrava Labs membantu bisnis hadir online dengan website profesional"
           width={1400}
           height={1200}
+          priority
           className='w-full h-auto object-cover md:object-cover md:bg-cover lg:rounded-2xl brightness-50'
         />
+
+        {/* Overlay Warna */}
         <div className='bg-dev-blue absolute w-40 h-full md:w-90 lg:w-97 opacity-60 md:rounded-tl-2xl md:rounded-bl-2xl'></div>
 
         {/* Container Animasi */}
@@ -46,6 +49,7 @@ const HeroSection = () => {
           viewport={{ once: false, amount: 0.3 }}
           variants={container}
         >
+          {/* Main Heading */}
           <motion.h1
             className='font-bold text-head-3-32 text-dev-white md:text-[50px] md:w-150 leading-tight'
             variants={item}
@@ -53,17 +57,25 @@ const HeroSection = () => {
             Take Your Business Online with Infrava Labs
           </motion.h1>
 
-          <motion.h5
+          {/* Subheading pakai H2 */}
+          <motion.h2
             className='font-bold w-70 text-body-md-16 text-dev-white md:text-body-md-16 md:w-65 leading-tight'
             variants={item}
           >
             We create professional websites for your business—fast and easy.
-          </motion.h5>
+          </motion.h2>
 
+          {/* CTA */}
           <motion.div variants={item} className='group'>
-            <Link href={"#contact"} className='bg-dev-white hover:bg-dev-light-grey h-12 w-55 md:w-55 md:h-16 justify-center text-dev-blue rounded-2xl flex items-center gap-4'>
-              <p className='text-body-xs-12 md:text-body-[13px] font-bold'>Build Your Website Now</p>
-              <ArrowRightIcon width={16} height={16} fontWeight={1}/>
+            <Link 
+              href="#contact"
+              title="Contact Infrava Labs to build your website now"
+              className='bg-dev-white hover:bg-dev-light-grey h-12 w-55 md:w-55 md:h-16 justify-center text-dev-blue rounded-2xl flex items-center gap-4'
+            >
+              <p className='text-body-xs-12 md:text-body-[13px] font-bold'>
+                Build Your Website Now
+              </p>
+              <ArrowRightIcon width={16} height={16} />
             </Link>
           </motion.div>
         </motion.div>
