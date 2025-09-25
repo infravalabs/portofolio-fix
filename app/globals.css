@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -10,29 +13,72 @@
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-inter: "Inter", sans-serif;
+
+  --color-dev-grey: #696969;
+  --color-dev-white: #ffffff;
+  --color-dev-black: #000000;
+  --color-dev-light-grey: #b0b0b0;
+  --color-dev-ultralight-grey: #909090;
+  --color-dev-blue: #014BAA;
+  --color-dev-blue-navy: #003171;
+  --color-dev-light-blue: #4697FF;
+  
+
+  --text-head-1-64: 64px;
+  --text-head-2-48: 48px;
+  --text-head-3-32: 32px;
+  --text-body-xl-24: 24px;
+  --text-body-lg-20: 20px;
+  --text-body-md-16: 16px;
+  --text-body-sm-14: 14px;
+  --text-body-xs-12: 12px;
+  --text-body-xms-11: 11px;
+  --text-body-xxs-10: 10px;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@layer components {
+  .btn-black {
+    @apply border content-center text-center align-middle w-fit h-fit px-7 py-2 
+            md:text-body-md-16 sm:text-body-sm-14 text-body-xs-12 
+            bg-dev-black hover:bg-dev-white text-dev-white hover:text-dev-black 
+            border-transparent hover:border-black transition-all cursor-pointer;
+  }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+  .btn-white {
+    @apply border content-center text-center align-middle w-fit h-fit px-7 py-2 
+            md:text-body-md-16 sm:text-body-sm-14 text-body-xs-12 
+            bg-dev-white hover:bg-dev-black text-dev-black hover:text-dev-white 
+            border-black hover:border-transparent transition-all cursor-pointer;
+  }
 
-a {
-  color: inherit;
-  text-decoration: none;
+  .btn-gray {
+    @apply border content-center text-center align-middle w-fit h-fit px-7 py-2 
+            md:text-body-md-16 sm:text-body-sm-14 text-body-xs-12 
+            bg-[#AFAFAF] hover:bg-[#696969] text-dev-white hover:text-dev-white 
+            border-[#AFAFAF] hover:border-transparent transition-all cursor-pointer;
+  }
+
+  .search-field {
+    @apply border content-center w-fit h-fit px-3 py-2
+            md:text-body-md-16 sm:text-body-sm-14 text-body-xs-12 
+            bg-dev-grey hover:bg-dev-white text-dev-white hover:text-dev-black 
+            focus:bg-dev-white focus:text-dev-black focus:outline-2
+            border-transparent hover:outline-1 transition-all cursor-pointer;
+  }
+  .input-field {
+    @apply border w-full h-fit px-2.5 py-1.5 
+            md:text-body-md-16 sm:text-body-sm-14 text-body-xs-12 
+            bg-dev-white hover:bg-dev-white text-dev-black hover:text-dev-black 
+            focus:bg-dev-white focus:text-dev-black focus:outline-1
+            border-dev-black hover:outline-1 disabled:bg-[#E9E9E9] disabled:border disabled:border-[#C4C4C4] 
+            disabled:hover:outline-0 disabled:hover:outline-transparent disabled:cursor-default transition-all cursor-pointer;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,3 +86,41 @@ a {
     color-scheme: dark;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 120px; /* sesuaikan dengan tinggi navbar */
+}
+
+/* Scrollbar untuk Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 6px;              /* lebar scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;     /* warna background track */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;        /* warna scroll */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;        /* warna scroll saat hover */
+}
+
+/* Scrollbar Firefox */
+* {
+  scrollbar-width: thin;        /* tipis */
+  scrollbar-color: #888 #f1f1f1; /* thumb | track */
+}
+
+.clip-trapezoid {
+  clip-path: polygon(2% 0, 98% 0%, 99.2% 91.8%, 1% 90%);
+}
+
