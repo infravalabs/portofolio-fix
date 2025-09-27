@@ -71,10 +71,54 @@ const ContactSection: React.FC = () => {
       <Toaster position="top-right" reverseOrder={false} />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-2">
 
+
+        {/* Text / Contact Info */}
+        <div className="w-full md:w-152 h-auto px-2.5 order-2 md:order-2">
+          <div className="grid grid-cols-1 px-2.5 gap-y-4 md:gap-y-10 order-1 md:order-2">
+            <motion.div
+              className="px-2.5 py-2.5 gap-3 flex flex-col"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6 }}
+            >
+              <p className="text-dev-blue font-bold text-body-xxs-10 tracking-[0.2em]">We’re here to help you.</p>
+              <h2 className="text-[24px] md:text-[48px] text-dev-black font-medium leading-tight tracking-normal">
+                <span className="font-bold">Start</span> your project with InfravaLabs <span className="font-bold">today</span>.
+              </h2>
+              <h5 className="text-body-sm-14 text-dev-grey font-medium text-justify">
+                You can reach us anytime through email, WhatsApp, or our website’s contact form. We’ll get back to you as soon as possible.
+              </h5>
+            </motion.div>
+
+            <motion.div
+              className="px-2.5 flex flex-col gap-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="flex gap-5 items-center">
+                <EnvelopeIcon width={50} height={50} className="text-dev-blue"/>
+                <div className="flex flex-col py-2.5">
+                  <h5 className="text-dev-grey text-body-sm-14 font-bold">Email</h5>
+                  <p className="text-dev-grey text-body-md-16 font-medium">infravalbas@gmail.com</p>
+                </div>
+              </div>
+              <div className="flex gap-5 items-center">
+                <PhoneIcon width={50} height={50} className="text-dev-blue"/>
+                <div className="flex flex-col py-2.5">
+                  <h5 className="text-dev-grey text-body-sm-14 font-bold">Phone Number</h5>
+                  <p className="text-dev-grey text-body-md-16 font-medium">(0361) 123456</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
         {/* FORM SIDE */}
         <motion.form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col px-2.5 md:px-12 py-2.5"
+          className="flex flex-col px-2.5 md:px-12 py-2.5 order-2 md:order-1"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -121,50 +165,6 @@ const ContactSection: React.FC = () => {
             </div>
           </div>
         </motion.form>
-
-        {/* Text / Contact Info */}
-        <div className="w-full md:w-152 h-auto px-2.5 order-2 md:order-2">
-          <div className="grid grid-cols-1 px-2.5 gap-y-4 md:gap-y-10">
-            <motion.div
-              className="px-2.5 py-2.5 gap-3 flex flex-col"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6 }}
-            >
-              <p className="text-dev-blue font-bold text-body-xxs-10 tracking-[0.2em]">We’re here to help you.</p>
-              <h2 className="text-[24px] md:text-[48px] text-dev-black font-medium leading-tight tracking-normal">
-                <span className="font-bold">Start</span> your project with InfravaLabs <span className="font-bold">today</span>.
-              </h2>
-              <h5 className="text-body-sm-14 text-dev-grey font-medium text-justify">
-                You can reach us anytime through email, WhatsApp, or our website’s contact form. We’ll get back to you as soon as possible.
-              </h5>
-            </motion.div>
-
-            <motion.div
-              className="px-2.5 flex flex-col gap-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="flex gap-5 items-center">
-                <EnvelopeIcon width={50} height={50} className="text-dev-blue"/>
-                <div className="flex flex-col py-2.5">
-                  <h5 className="text-dev-grey text-body-sm-14 font-bold">Email</h5>
-                  <p className="text-dev-grey text-body-md-16 font-medium">infravalbas@gmail.com</p>
-                </div>
-              </div>
-              <div className="flex gap-5 items-center">
-                <PhoneIcon width={50} height={50} className="text-dev-blue"/>
-                <div className="flex flex-col py-2.5">
-                  <h5 className="text-dev-grey text-body-sm-14 font-bold">Phone Number</h5>
-                  <p className="text-dev-grey text-body-md-16 font-medium">(0361) 123456</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
       </div>
     </section>
   )

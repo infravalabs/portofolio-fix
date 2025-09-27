@@ -73,10 +73,8 @@ const Faq = () => {
   }
 
   const { theme } = useTheme()
+  const textColor = theme === "dark" ? "text-dev-black" : "text-dev-white"
 
-  const textColorBgCard = theme === "dark" ? "bg-dev-light-blue" : "bg-dev-blue"
-  const textColorBgCardHover = theme === "dark" ? "bg-dev-grey" : "bg-dev-white"
-  const borderColorBgCard = theme === "dark" ? "border-dev-light-blue" : "border-dev-blue"
   
   return (
     
@@ -148,7 +146,7 @@ const Faq = () => {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <p className="text-dev-white group-hover:text-dev-blue font-medium text-body-xs-12 pb-3">
+                    <p className={`${textColor} group-hover:text-dev-blue font-medium text-body-xs-12 pb-3`}>
                       {content.description}
                     </p>
                   </motion.div>
