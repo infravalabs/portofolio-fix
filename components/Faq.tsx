@@ -4,6 +4,9 @@ import { PlusCircleIcon, MinusCircleIcon } from '@heroicons/react/24/solid'
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from "framer-motion"
 import Script from 'next/script'
+import { useTheme } from "@/context/ThemeContext"
+import clsx from "clsx"
+
 
 const faqContent = [
   {
@@ -69,7 +72,14 @@ const Faq = () => {
     })),
   }
 
+  const { theme } = useTheme()
+
+  const textColorBgCard = theme === "dark" ? "bg-dev-light-blue" : "bg-dev-blue"
+  const textColorBgCardHover = theme === "dark" ? "bg-dev-grey" : "bg-dev-white"
+  const borderColorBgCard = theme === "dark" ? "border-dev-light-blue" : "border-dev-blue"
+  
   return (
+    
     <div id='faq' className="px-5 md:px-50 gap-2 mt-20 scroll-mt-32">
       {/* JSON-LD Schema.org for FAQ */}
       <Script
@@ -112,11 +122,16 @@ const Faq = () => {
             <motion.li
               key={index}
               onClick={() => toggleFaq(index)}
-              className="bg-dev-blue hover:bg-dev-white rounded-lg border border-dev-blue px-5 py-2.5 cursor-pointer group"
+              className={clsx(
+                "rounded-lg border px-5 py-2.5 cursor-pointer group transition-colors duration-200",
+                theme === "dark"
+                  ? "bg-dev-light-blue text-dev-black border-dev-light-blue hover:bg-dev-black"
+                  : "bg-dev-blue text-dev-white border-dev-blue hover:bg-dev-white"
+              )}
               variants={itemVariants}
             >
               <div className="flex justify-between items-center py-5">
-                <h5 className="text-dev-white group-hover:text-dev-blue text-body-sm-14 font-semibold">{content.title}</h5>
+                <h5 className=" group-hover:text-dev-blue text-body-sm-14 font-semibold">{content.title}</h5>
                 {openIndex === index ? (
                   <MinusCircleIcon width={24} height={24} className="text-white group-hover:text-dev-blue" />
                 ) : (

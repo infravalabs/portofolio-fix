@@ -9,7 +9,7 @@ import ServiceSection from "@/components/ServiceSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col relative min-h-screen bg-white overflow-x-hidden font-inter">
+    <div className="flex flex-col relative min-h-screen bg-background text-foreground overflow-x-hidden font-inter">
       <Navbar />
 
       <div className="mt-15">

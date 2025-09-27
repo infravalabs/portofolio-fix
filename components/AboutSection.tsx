@@ -4,9 +4,11 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from "framer-motion"
+import { useTheme } from "@/context/ThemeContext"
 import { ArrowRightIcon, BanknotesIcon, DevicePhoneMobileIcon, ChatBubbleLeftRightIcon } from "@heroicons/react/24/solid";
 
 const AboutSection = () => {
+  const { theme } = useTheme()
 
   const bottomCards = [
     {
@@ -25,6 +27,8 @@ const AboutSection = () => {
       desc: "Our commitment doesn’t end when your site goes live. We provide ongoing support and maintenance to keep your website up-to-date and running smoothly."
     }
   ]
+
+  const textColorCTA = theme === "dark" ? "text-dev-black" : "text-dev-white"
 
   return (
     <div id='about' className='px-5 md:px-10 lg:px-50 mt-25 w-full scroll-mt-32'>
@@ -87,7 +91,7 @@ const AboutSection = () => {
               <Link 
                 href="/about" 
                 title="Read more about Infrava Labs"
-                className='bg-dev-blue hover:bg-dev-blue-navy h-10 w-full md:w-50 md:h-12 justify-center text-dev-white font-semibold rounded-lg flex items-center gap-3 transition ease-in-out duration-200'
+                className={`bg-dev-blue hover:bg-dev-blue-navy h-10 w-full md:w-50 md:h-12 justify-center ${textColorCTA} font-semibold rounded-lg flex items-center gap-3 transition ease-in-out duration-200`}
               >
                 <p className='text-body-xs-12'>Continue Reading</p>
                 <ArrowRightIcon width={16} height={16}/>

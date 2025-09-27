@@ -3,12 +3,14 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from "framer-motion";
 import Image from 'next/image'
 import { EyeIcon, XMarkIcon, ChevronRightIcon } from "@heroicons/react/24/outline"; 
+import { useTheme } from "@/context/ThemeContext";
 
 const ProjectSection = () => {
   const [activeProject, setActiveProject] = useState("/mamaku.png")
   const [isPreviewOpen, setIsPreviewOpen] = useState(false)
   const [projectOpen, setProjectOpen] = useState(true)
   const [hardwareOpen, setHardwareOpen] = useState(false)
+  const { theme } = useTheme()
 
   const projects = [
     { id: 1, title: "Mamaku Studio", desc: "We believe professional websites should be accessible to everyone. That’s why we offer competitive pricing while still delivering high-quality results.", img: "/mamaku.png" },
@@ -64,6 +66,8 @@ const ProjectSection = () => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
   }
+
+  const textColorHardware = theme === "dark" ? "text-dev-white" : "text-dev-black"
 
   return (
     <section id='projects' className='md:px-50 mt-10 md:mt-20 scroll-mt-20 flex flex-col gap-5 md:gap-5'>
@@ -269,7 +273,7 @@ const ProjectSection = () => {
 
                   {/* BACK */}
                   <div className="absolute w-full h-full backface-hidden border border-gray-300 shadow-xl bg-gray-200 flex flex-col items-start px-5 py-5 rotate-y-180 overflow-y-auto">
-                    <h3 className="text-lg font-semibold mb-2 text-dev-black">{hardware.title}</h3>
+                    <h3 className={`text-lg font-semibold mb-2 text-dev-black ${textColorHardware}`}>{hardware.title}</h3>
                     <p className="text-sm text-justify text-gray-700 mb-3">{hardware.desc}</p>
                   </div>
                 </motion.article>

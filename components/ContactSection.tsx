@@ -91,7 +91,7 @@ const ContactSection: React.FC = () => {
                     type={field === "email" ? "email" : "text"}
                     id={field}
                     placeholder={`Your ${field.charAt(0).toUpperCase() + field.slice(1)}`}
-                    className="px-2.5 py-2.5 text-dev-grey w-full rounded-lg bg-[#F3F3F3] text-body-xs-12"
+                    className="px-2.5 py-2.5 text-dev-grey w-full rounded-lg bg-dev-contact-grey text-body-xs-12"
                     {...register(field as keyof FormData, { required: `${field.charAt(0).toUpperCase() + field.slice(1)} is required` })}
                   />
                 ) : (
@@ -99,7 +99,7 @@ const ContactSection: React.FC = () => {
                     id="message"
                     rows={4}
                     placeholder="Your Message"
-                    className="px-2.5 py-2.5 text-dev-grey w-full rounded-lg bg-[#F3F3F3] text-body-xs-12"
+                    className="px-2.5 py-2.5 text-dev-grey w-full rounded-lg bg-dev-contact-grey text-body-xs-12"
                     {...register("message", { required: "Message is required" })}
                   />
                 )}

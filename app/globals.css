@@ -4,13 +4,29 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --dev-black: #000000;
+  --dev-white: #ffffff;
+  --dev-grey: #696969;
+  --dev-light-grey: #b0b0b0;
+  --dev-ultralight-grey: #909090;
+  --dev-contact-grey: #f3f3f3;
+  --dev-blue: #014BAA;
+  --dev-blue-navy: #003171;
+  --dev-light-blue: #4697FF;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark { /* Ubah ini dari [data-theme="dark"] */
+  --background: #18191a;
+  --foreground: #ededed;
+  --dev-black: #ffffff;
+  --dev-white: #000000;
+  --dev-grey: #b0b0b0;
+  --dev-light-grey: #696969;
+  --dev-ultralight-grey: #909090;
+  --dev-contact-grey: #383737;
+  --dev-blue: #4697FF;
+  --dev-blue-navy: #014BAA;
+  --dev-light-blue: #014BAA;
 }
 
 @theme inline {
@@ -20,15 +36,16 @@
   --font-mono: var(--font-geist-mono);
   --font-inter: "Inter", sans-serif;
 
-  --color-dev-grey: #696969;
-  --color-dev-white: #ffffff;
-  --color-dev-black: #000000;
-  --color-dev-light-grey: #b0b0b0;
-  --color-dev-ultralight-grey: #909090;
-  --color-dev-blue: #014BAA;
-  --color-dev-blue-navy: #003171;
-  --color-dev-light-blue: #4697FF;
-  
+  --color-dev-grey: var(--dev-grey);
+  --color-dev-white: var(--dev-white);
+  --color-dev-black: var(--dev-black);
+  --color-dev-light-grey: var(--dev-light-grey);
+  --color-dev-ultralight-grey: var(--dev-ultralight-grey);
+  --color-dev-blue: var(--dev-blue);
+  --color-dev-blue-navy: var(--dev-blue-navy);
+  --color-dev-light-blue:var(--dev-light-blue);
+  --color-dev-contact-grey:var(--dev-contact-grey);
+
 
   --text-head-1-64: 64px;
   --text-head-2-48: 48px;
@@ -44,46 +61,40 @@
 
 @layer components {
   .btn-black {
-    @apply border content-center text-center align-middle w-fit h-fit px-7 py-2 
-            md:text-body-md-16 sm:text-body-sm-14 text-body-xs-12 
-            bg-dev-black hover:bg-dev-white text-dev-white hover:text-dev-black 
+    @apply border content-center text-center align-middle w-fit h-fit px-7 py-2
+            md:text-body-md-16 sm:text-body-sm-14 text-body-xs-12
+            bg-[var(--dev-black)] hover:bg-[var(--dev-white)] text-[var(--dev-white)] hover:text-[var(--dev-black)]
             border-transparent hover:border-black transition-all cursor-pointer;
   }
 
   .btn-white {
-    @apply border content-center text-center align-middle w-fit h-fit px-7 py-2 
-            md:text-body-md-16 sm:text-body-sm-14 text-body-xs-12 
-            bg-dev-white hover:bg-dev-black text-dev-black hover:text-dev-white 
+    @apply border content-center text-center align-middle w-fit h-fit px-7 py-2
+            md:text-body-md-16 sm:text-body-sm-14 text-body-xs-12
+            bg-[var(--dev-white)] hover:bg-[var(--dev-black)] text-[var(--dev-black)] hover:text-[var(--dev-white)]
             border-black hover:border-transparent transition-all cursor-pointer;
   }
 
   .btn-gray {
-    @apply border content-center text-center align-middle w-fit h-fit px-7 py-2 
-            md:text-body-md-16 sm:text-body-sm-14 text-body-xs-12 
-            bg-[#AFAFAF] hover:bg-[#696969] text-dev-white hover:text-dev-white 
+    @apply border content-center text-center align-middle w-fit h-fit px-7 py-2
+            md:text-body-md-16 sm:text-body-sm-14 text-body-xs-12
+            bg-[#AFAFAF] hover:bg-[#696969] text-[var(--dev-white)] hover:text-[var(--dev-white)]
             border-[#AFAFAF] hover:border-transparent transition-all cursor-pointer;
   }
 
   .search-field {
     @apply border content-center w-fit h-fit px-3 py-2
-            md:text-body-md-16 sm:text-body-sm-14 text-body-xs-12 
-            bg-dev-grey hover:bg-dev-white text-dev-white hover:text-dev-black 
-            focus:bg-dev-white focus:text-dev-black focus:outline-2
+            md:text-body-md-16 sm:text-body-sm-14 text-body-xs-12
+            bg-[var(--dev-grey)] hover:bg-[var(--dev-white)] text-[var(--dev-white)] hover:text-[var(--dev-black)]
+            focus:bg-[var(--dev-white)] focus:text-[var(--dev-black)] focus:outline-2
             border-transparent hover:outline-1 transition-all cursor-pointer;
   }
   .input-field {
-    @apply border w-full h-fit px-2.5 py-1.5 
-            md:text-body-md-16 sm:text-body-sm-14 text-body-xs-12 
-            bg-dev-white hover:bg-dev-white text-dev-black hover:text-dev-black 
-            focus:bg-dev-white focus:text-dev-black focus:outline-1
-            border-dev-black hover:outline-1 disabled:bg-[#E9E9E9] disabled:border disabled:border-[#C4C4C4] 
+    @apply border w-full h-fit px-2.5 py-1.5
+            md:text-body-md-16 sm:text-body-sm-14 text-body-xs-12
+            bg-[var(--dev-white)] hover:bg-[var(--dev-white)] text-[var(--dev-black)] hover:text-[var(--dev-black)]
+            focus:bg-[var(--dev-white)] focus:text-[var(--dev-black)] focus:outline-1
+            border-[var(--dev-black)] hover:outline-1 disabled:bg-[#E9E9E9] disabled:border disabled:border-[#C4C4C4]
             disabled:hover:outline-0 disabled:hover:outline-transparent disabled:cursor-default transition-all cursor-pointer;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
   }
 }
 
@@ -123,4 +134,8 @@ section {
 .clip-trapezoid {
   clip-path: polygon(2% 0, 98% 0%, 99.2% 91.8%, 1% 90%);
 }
-
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s, color 0.3s;
+}
