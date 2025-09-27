@@ -41,8 +41,7 @@ const HeroSection = () => {
           alt="Infrava Labs membantu bisnis hadir online dengan website profesional"
           width={1400}
           height={1200}
-          priority
-          className='w-full h-auto object-cover lg:rounded-2xl brightness-50'
+          className='w-full h-full object-cover md:object-cover md:bg-cover lg:rounded-2xl brightness-50'
         />
 
         {/* Overlay Warna (tetap biru, nggak ikut theme) */}
