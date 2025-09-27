@@ -33,7 +33,7 @@ const HeroSection = () => {
 
   return (
     <div id='home' className='lg:px-50 mt-10 md:mt-20 scroll-mt-32'>
-      <div className='flex h-100 md:w-full md:h-135 lg:rounded-2xl relative'>
+      <div className='flex h-180 md:w-full md:h-135 lg:rounded-2xl relative'>
 
         {/* Hero Image */}
         <Image 
@@ -49,7 +49,7 @@ const HeroSection = () => {
 
         {/* Container Animasi */}
         <motion.div
-          className='absolute px-10 py-10 md:px-20 lg:px-28 md:py-30 gap-12 md:gap-16 flex flex-col md:items-start'
+          className='absolute px-10 py-50 md:px-20 lg:px-28 md:py-30 gap-12 md:gap-16 flex flex-col md:items-start'
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.3 }}
