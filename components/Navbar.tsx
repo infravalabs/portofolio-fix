@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
   const iconColor = theme === "dark" ? "text-dev-black" : "text-dev-black";
 
   return (
-    <nav className="layout-container fixed top-0 left-0 z-10 right-0">
+    <nav className="layout-container fixed top-0 left-0 z-30 right-0">
       <header className="flex justify-between bg-background items-center px-10 md:px-25 py-5 transition-colors duration-300">
         {/* Logo */}
         <div className="flex gap-2.5 justify-center items-center">

@@ -4,6 +4,7 @@ import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
+import MeetOurTeam from "@/components/OurTeam";
 import ProjectSection from "@/components/ProjectSection";
 import ServiceSection from "@/components/ServiceSection";
 
@@ -19,6 +20,7 @@ export default function Home() {
         <ServiceSection />
         <Faq />
         <ContactSection />
+        <MeetOurTeam />
         <Footer />
       </div>
     </div>
