@@ -76,8 +76,7 @@ const AboutSection = () => {
                 Smart IT Solutions by Professional Experts
               </h3>
               <p className='text-body-sm-14 text-dev-grey font-medium text-justify'>
-                At InfravaLabs, we specialize in Web Development and Laptop & Computer Hardware Repair. 
-                Our mission is to deliver reliable digital solutions and technical support.
+                At InfravaLabs, we specialize in Web Development, Digital Wedding Invitations, and Laptop & Computer Hardware Repair. Our mission is to deliver reliable digital solutions and trusted technical support.
               </p>
             </motion.div>
 
@@ -89,7 +88,7 @@ const AboutSection = () => {
               transition={{ duration: 0.6 }}
             >
               <Link 
-                href="/about" 
+                href="/#ourteam" 
                 title="Read more about Infrava Labs"
                 className={`bg-dev-blue hover:bg-dev-blue-navy h-10 w-full md:w-50 md:h-12 justify-center ${textColorCTA} font-semibold rounded-lg flex items-center gap-3 transition ease-in-out duration-200`}
               >

@@ -27,22 +27,22 @@ const Footer = () => {
                     <div className='flex flex-col gap-3 justify-start'>
                         <h2 className={`font-bold text-body-md-16 md:text-body-lg-20 ${textColorTitle}`}>Infrava Labs</h2>
                         <div className={`flex flex-col gap-1 ${textColor}`}>
-                            <Link href={"/home"} className='text-body-xs-12'>
+                            <Link href={"/#home"} className='text-body-xs-12'>
                                 Home
                             </Link>
-                            <Link href={"/about"} className='text-body-xs-12'>
+                            <Link href={"/#about"} className='text-body-xs-12'>
                                 About Us
                             </Link>
-                            <Link href={"/projects"} className=' text-body-xs-12'>
+                            <Link href={"/#projects"} className=' text-body-xs-12'>
                                 Projects
                             </Link>
-                            <Link href={"/services"} className=' text-body-xs-12'>
+                            <Link href={"/#services"} className=' text-body-xs-12'>
                                 Services
                             </Link>
-                            <Link href={"/faq"} className=' text-body-xs-12'>
+                            <Link href={"/#faq"} className=' text-body-xs-12'>
                                 FAQ
                             </Link>
-                            <Link href={"/contact"} className=' text-body-xs-12'>
+                            <Link href={"/#contact"} className=' text-body-xs-12'>
                                 Contact Us
                             </Link>
                         </div>

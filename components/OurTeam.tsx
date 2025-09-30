@@ -9,7 +9,7 @@ const teamMembers = [
   {
     name: "Yogi Prasetya",
     role: "Founder & FE",
-    img: "/foto.jpg",
+    img: "/yogi.jpg",
     linkedin: "/linkedin.png",
     github: "/github.png",
     linkedinUrl: "https://www.linkedin.com/in/yogiprasetyad/",
@@ -53,7 +53,7 @@ const OurTeam = () => {
   const textColorRole = theme === "dark" ? "text-dev-grey" : "text-dev-light-grey";
 
   return (
-    <div className="md:px-50 mt-10 md:mt-20 scroll-mt-20 flex flex-col gap-5 md:gap-5">
+    <div id="ourteam" className="md:px-50 mt-10 md:mt-20 scroll-mt-20 flex flex-col gap-5 md:gap-5">
       {/* Heading */}
       <div className="flex flex-col gap-4 px-5 py-5">
         <p><span className='rounded-2xl border border-dev-black text-body-sm-14 px-1 py-0.5'>Who</span> <span className='rounded-2xl border border-dev-black text-body-sm-14 px-1 py-0.5'>We</span> <span className='rounded-2xl border border-dev-black text-body-sm-14 px-1 py-0.5'>Are</span></p>

@@ -14,7 +14,7 @@ const ProjectSection = () => {
 
   const projects = [
     { id: 1, title: "Mamaku Studio", desc: "We believe professional websites should be accessible to everyone. That’s why we offer competitive pricing while still delivering high-quality results.", img: "/mamaku.png" },
-    { id: 2, title: "Infrava Website", desc: "A modern company profile website with responsive design and optimized performance.", img: "/tes.jpg" },
+    { id: 2, title: "Personal Portofolio", desc: "A personal portfolio project by InfravaLabs’ founder, showcasing a modern company profile website with responsive design and optimized performance.", img: "/mockup.png" },
     { id: 3, title: "E-Commerce Demo", desc: "An e-commerce platform with cart system, checkout, and admin panel for managing products.", img: "/tes.jpg" }
   ]
 
@@ -23,37 +23,37 @@ const ProjectSection = () => {
       id: 1,
       title: "Laptop Cleaning Service",
       desc: "A professional deep cleaning and maintenance service that includes dust removal, cooling system optimization, and overall performance check to extend the device’s lifespan.",
-      img: "/mamaku.png"
+      img: "/hardware1.jpg"
     },
     {
       id: 2,
       title: "Keyboard Repair & Replacement",
       desc: "Reliable solutions for damaged or unresponsive laptop keyboards. From single key fixes to full replacements, restoring functionality and comfort.",
-      img: "/keyboard.jpg"
+      img: "/hardware2.jpg"
     },
     {
       id: 3,
       title: "SSD Upgrade",
       desc: "Enhance device performance with the latest solid-state drive technology. Enjoy faster boot times, smoother multitasking, and improved system responsiveness.",
-      img: "/ssd-upgrade.jpg"
+      img: "/hardware3.jpg"
     },
     {
       id: 4,
       title: "Battery Replacement",
       desc: "Restore mobility and productivity with high-quality battery replacement, ensuring longer usage hours and reliable power on the go.",
-      img: "/battery.jpg"
+      img: "/hardware4.jpg"
     },
     {
       id: 5,
       title: "Screen Repair",
       desc: "Professional screen repair and replacement service. Fixing cracks, display issues, and ensuring accurate color reproduction with premium panels.",
-      img: "/screen-repair.jpg"
+      img: "/hardware5.jpg"
     },
     {
       id: 6,
       title: "GPU Thermal Service",
       desc: "Specialized GPU thermal maintenance that prevents overheating, improves stability, and extends the overall lifespan of your graphics card.",
-      img: "/gpu-service.jpg"
+      img: "/hardware6.jpg"
     }
   ];
 
@@ -68,8 +68,12 @@ const ProjectSection = () => {
   }
 
   const textColorHardware = theme === "dark" ? "text-dev-white" : "text-dev-black"
+  const textColor = theme === "dark" ? "text-dev-blue" : "text-dev-light-blue";
+  const bgColor = theme === "dark" ? "bg-gradient-to-b from-transparent to-dev-white" : "bg-gradient-to-b from-transparent to-dev-black";
+  
 
   return (
+      
     <section id='projects' className='md:px-50 mt-10 md:mt-20 scroll-mt-20 flex flex-col gap-5 md:gap-5'>
       
       {/* Web Development Section */}
@@ -258,16 +262,27 @@ const ProjectSection = () => {
                   style={{ transformStyle: "preserve-3d" }}
                 >
                   {/* FRONT */}
-                  <div className="absolute w-full h-full backface-hidden border border-gray-300 shadow-xl flex flex-col items-start justify-center">
+                  <div className="absolute w-full h-full backface-hidden shadow-xl flex flex-col items-start justify-center ">
+                    {/* Gambar */}
                     <Image 
                       src={hardware.img} 
                       alt={`${hardware.title} service illustration`} 
                       width={300} 
                       height={200} 
-                      className="object-cover w-full h-47" 
+                      className="object-cover w-full h-full" 
                     />
-                    <div className='px-5 py-5'>
-                      <h3 className=" text-lg font-semibold text-dev-black">{hardware.title}</h3>
+
+                    {/* Gradient + Content */}
+                    <div className="absolute bottom-0 left-0 w-full h-15 z-10">
+                      {/* Gradient overlay */}
+                      <div className={`absolute inset-0 ${bgColor} `}></div>
+
+                      {/* Content di atas gradient */}
+                      <div className="relative z-20 px-5 py-3">
+                        <h3 className={`text-lg font-semibold ${textColor}`}>
+                          {hardware.title}
+                        </h3>
+                      </div>
                     </div>
                   </div>
 
