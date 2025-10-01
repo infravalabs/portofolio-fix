@@ -12,7 +12,7 @@ const Footer = () => {
 
   return (
     <div className='mt-20 items-center'>
-        <div className=' bg-dev-blue-navy py-9 px-5 md:px-60'>
+        <div className=' bg-dev-blue-navy py-9 px-5 md:px-15 lg:px-20 xl:px-60'>
             <div className='flex justify-between items-start'>
                 <div className='pb-8 flex'>
                     <div className={`flex flex-col gap-5 ${textColorTitle}`}>
@@ -50,13 +50,13 @@ const Footer = () => {
                     <div className='flex flex-col gap-3 justify-start'>
                         <h2 className={`font-bold text-body-md-16 md:text-body-lg-20 ${textColorTitle}`} >Socials</h2>
                         <div className={`flex flex-col gap-1 ${textColor}`}>
-                            <Link href={"/home"} className=' text-body-xs-12'>
+                            <Link href={"https://www.instagram.com/infravalabs"} className=' text-body-xs-12'>
                                 Instagram
                             </Link>
-                            <Link href={"/about"} className=' text-body-xs-12'>
+                            <Link href={"/#about"} className=' text-body-xs-12'>
                                 Linked In
                             </Link>
-                            <Link href={"/projects"} className=' text-body-xs-12'>
+                            <Link href={"/#projects"} className=' text-body-xs-12'>
                                 Whatsapp
                             </Link>
                         </div>

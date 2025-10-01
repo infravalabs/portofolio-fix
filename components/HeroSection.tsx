@@ -33,7 +33,7 @@ const HeroSection = () => {
 
   return (
     <div id='home' className='lg:px-10 xl:px-50 mt-10 md:mt-20 scroll-mt-32'>
-      <div className='flex h-180 md:w-full md:h-135 lg:rounded-2xl relative'>
+      <div className='flex h-180 md:w-full md:h-135 md:rounded-none lg:rounded-2xl relative'>
 
         {/* Hero Image */}
         <Image 
@@ -41,11 +41,11 @@ const HeroSection = () => {
           alt="Infrava Labs membantu bisnis hadir online dengan website profesional"
           width={1400}
           height={1200}
-          className='w-full h-full object-cover md:object-cover md:bg-cover lg:rounded-2xl brightness-50'
+          className='w-full h-full object-cover md:object-cover md:bg-cover md:rounded-none lg:rounded-2xl brightness-50'
         />
 
         {/* Overlay Warna (tetap biru, nggak ikut theme) */}
-        <div className='bg-dev-blue absolute w-40 h-full md:w-90 lg:w-90 xl:w-97 opacity-60 md:rounded-tl-2xl md:rounded-bl-2xl'></div>
+        <div className='bg-dev-blue absolute w-40 h-full md:w-90 lg:w-90 xl:w-97 opacity-60 lg:rounded-tl-2xl lg:rounded-bl-2xl'></div>
 
         {/* Container Animasi */}
         <motion.div
