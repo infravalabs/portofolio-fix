@@ -32,7 +32,7 @@ const HeroSection = () => {
   const ctaBg = theme === "dark" ? "bg-white text-black hover:bg-gray-200" : "bg-dev-white text-dev-blue hover:bg-dev-light-grey"
 
   return (
-    <div id='home' className='lg:px-50 mt-10 md:mt-20 scroll-mt-32'>
+    <div id='home' className='lg:px-10 xl:px-50 mt-10 md:mt-20 scroll-mt-32'>
       <div className='flex h-180 md:w-full md:h-135 lg:rounded-2xl relative'>
 
         {/* Hero Image */}
@@ -45,11 +45,11 @@ const HeroSection = () => {
         />
 
         {/* Overlay Warna (tetap biru, nggak ikut theme) */}
-        <div className='bg-dev-blue absolute w-40 h-full md:w-90 lg:w-97 opacity-60 md:rounded-tl-2xl md:rounded-bl-2xl'></div>
+        <div className='bg-dev-blue absolute w-40 h-full md:w-90 lg:w-90 xl:w-97 opacity-60 md:rounded-tl-2xl md:rounded-bl-2xl'></div>
 
         {/* Container Animasi */}
         <motion.div
-          className='absolute px-10 py-50 md:px-20 lg:px-28 md:py-30 gap-12 md:gap-16 flex flex-col md:items-start'
+          className='absolute px-10 py-50 md:px-20 lg:px-10 xl:px-28 md:py-30 gap-12 md:gap-16 flex flex-col md:items-start'
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.3 }}

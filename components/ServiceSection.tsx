@@ -25,26 +25,26 @@ const ServiceSection = () => {
   const bgTitleCardWhite = theme === "dark" ? "bg-dev-black" : "bg-dev-white"
 
   return (
-    <div id='services' className='px-5 md:px-10 lg:px-50 mt-18 w-full scroll-mt-32'>
+    <div id='services' className='px-5 md:px-10 lg:px-10 xl:px-50 mt-18 w-full scroll-mt-32'>
       <div className='flex flex-col gap-4 md:gap-8 lg:gap-5'>
         
         {/* Title */}
         <div className='flex flex-col gap-3'>
-          <div className='flex px-5 md:px-12 lg:px-16 py-1 justify-center items-center'>
-            <h2 className='text-dev-black font-bold text-[24px] md:text-[32px] lg:text-[42px] text-center'>
+          <div className='flex px-5 md:px-12 lg:px-12 xl:px-16 py-1 justify-center items-center'>
+            <h2 className='text-dev-black font-bold text-[24px] md:text-[32px] lg:text-[32px] xl:text-[42px] text-center'>
               What Can We Do for You
             </h2>
           </div>
-          <div className='flex justify-center items-center px-5 md:px-12 lg:px-28 py-1'>
-            <p className='text-dev-grey font-medium text-body-sm-14 md:text-body-sm-15 lg:text-body-md-16 text-center'>
+          <div className='flex justify-center items-center px-5 md:px-12 lg:px-12 xl:px-28 py-1'>
+            <p className='text-dev-grey font-medium text-body-sm-14 md:text-body-sm-15 lg:text-body-sm-15 xl:text-body-md-16 text-center'>
               Think of us as your creative partner. From concept to realization, we help you shape spaces that inspire, connect, and last. 
               With minimal design and thoughtful details, Infrava Labs is here to turn your ideas into timeless works.
             </p>
           </div>
         </div>
 
-        {/* ✅ Service Cards pakai Grid */}
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-10 px-1 md:px-5 lg:px-10'>
+        {/* Service Cards Grid */}
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6 lg:gap-6 xl:gap-10 px-1 md:px-5 lg:px-5 xl:px-10'>
 
           {/* Card 1 */}
           <div className='px-2.5 py-2 flex flex-col bg-[#272C41] rounded-xl shadow-xl gap-3'>
@@ -129,7 +129,7 @@ const ServiceSection = () => {
         </div>
       </div>
 
-      {/* ✅ SEO Structured Data JSON-LD */}
+      {/* SEO Structured Data */}
       <Script id="services-ld-json" type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",

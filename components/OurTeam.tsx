@@ -44,26 +44,21 @@ const teamMembers = [
   },
 ]
 
-
 const OurTeam = () => {
-
-  const { theme } = useTheme();
-  
-  const textColor = theme === "dark" ? "text-dev-blue" : "text-dev-light-blue";
-  const textColorRole = theme === "dark" ? "text-dev-grey" : "text-dev-light-grey";
+  const { theme } = useTheme()
+  const textColor = theme === "dark" ? "text-dev-blue" : "text-dev-light-blue"
+  const textColorRole = theme === "dark" ? "text-dev-grey" : "text-dev-light-grey"
 
   return (
-    <div id="ourteam" className="px-4 md:px-10 lg:px-50 mt-10 lg:mt-20 scroll-mt-20 flex flex-col gap-5 lg:gap-5">
+    <div id="ourteam" className="px-4 md:px-10 lg:px-10 xl:px-50 mt-10 lg:mt-20 xl:mt-20 scroll-mt-20 flex flex-col gap-5 lg:gap-5 xl:gap-5">
       {/* Heading */}
-      <div className="flex flex-col gap-4 px-5 py-5">
-        <p><span className='rounded-2xl border border-dev-black text-body-sm-14 px-1 py-0.5'>Who</span> <span className='rounded-2xl border border-dev-black text-body-sm-14 px-1 py-0.5'>We</span> <span className='rounded-2xl border border-dev-black text-body-sm-14 px-1 py-0.5'>Are</span></p>
-        <h2 className="text-body-lg-20 md:text-head-2-48 font-bold w-full">
-          Amazing Team Behind Infrava
-        </h2>
+      <div className="flex flex-col gap-4 px-5 py-5"> 
+        <p><span className='rounded-2xl border border-dev-black text-body-sm-14 px-1 py-0.5'>Who</span> <span className='rounded-2xl border border-dev-black text-body-sm-14 px-1 py-0.5'>We</span> <span className='rounded-2xl border border-dev-black text-body-sm-14 px-1 py-0.5'>Are</span></p> 
+        <h2 className="text-body-lg-20 md:text-head-2-48 font-bold w-full"> Amazing Team Behind Infrava </h2> 
       </div>
 
       {/* Description */}
-      <div className="px-5 py-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10">
+      <div className="px-5 py-5 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-10">
         <div>
           <p className="text-justify text-body-md-16 font-semibold">
             Smart ideas, powerful tech, driving impact in the digital era.
@@ -80,11 +75,11 @@ const OurTeam = () => {
       </div>
 
       {/* Team Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-5 py-5 gap-10 lg:gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 px-5 py-5 gap-10 lg:gap-5 xl:gap-5">
         {teamMembers.map((member, i) => (
           <div
             key={i}
-            className="rounded-lg relative shadow-xl border-gray-200 h-120 lg:h-80 flex"
+            className="rounded-lg relative shadow-xl border-gray-200 h-120 lg:h-120 xl:h-80 flex"
           >
             <Image
               src={member.img}
@@ -93,29 +88,24 @@ const OurTeam = () => {
               height={600}
               className="w-full h-full object-cover object-center"
             />
-            <div className="absolute bottom-0 left-0 w-full h-25 lg:h-15 z-10">
+            <div className="absolute bottom-0 left-0 w-full h-25 lg:h-25 xl:h-15 z-10">
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-80"></div>
 
               {/* Content di atas gradient */}
               <div className="relative z-20 flex flex-col px-5 w-full h-full">
-                {/* Nama */}
-                <h5 className={`text-body-lg-20 lg:text-body-sm-14 ${textColor} font-bold`}>
+                <h5 className={`text-body-lg-20 lg:text-body-lg-20 xl:text-body-sm-14 ${textColor} font-bold`}>
                   {member.name}
                 </h5>
-
-                {/* Role kiri + Ikon kanan */}
                 <div className="flex flex-row justify-between items-center w-full">
-                  {/* Role */}
-                  <p className={`text-body-md-16 lg:text-body-xs-12 ${textColorRole}`}>
+                  <p className={`text-body-md-16 lg:text-body-md-16 xl:text-body-xs-12 ${textColorRole}`}>
                     {member.role}
                   </p>
-
-                  {/* Ikon Sosmed */}
                   <div className="flex gap-2">
+                    {/* LinkedIn */}
                     <Link href={member.linkedinUrl}>
                       <svg
-                        className="w-6 h-6 lg:w-5 lg:h-5 text-white border rounded-full p-1"
+                        className="w-6 h-6 lg:w-6 lg:h-6 xl:w-5 xl:h-5 text-white border rounded-full p-1"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor"
                         viewBox="0 0 24 24"
@@ -128,9 +118,10 @@ const OurTeam = () => {
                         <path d="M7.2 8.809H4V19.5h3.2V8.809Z" />
                       </svg>
                     </Link>
+                    {/* GitHub */}
                     <Link href={member.githubUrl}>
                       <svg
-                        className="w-6 h-6 lg:w-5 lg:h-5 text-white border rounded-full p-1"
+                        className="w-6 h-6 lg:w-6 lg:h-6 xl:w-5 xl:h-5 text-white border rounded-full p-1"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor"
                         viewBox="0 0 24 24"

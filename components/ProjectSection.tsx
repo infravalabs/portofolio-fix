@@ -42,8 +42,8 @@ const ProjectSection = () => {
   const bgColor = theme === "dark" ? "bg-gradient-to-b from-transparent to-dev-white" : "bg-gradient-to-b from-transparent to-dev-black";
   
   return (
-    <section id='projects' className='md:px-10 lg:px-50 mt-10 md:mt-16 lg:mt-20 scroll-mt-20 flex flex-col gap-5 md:gap-6 lg:gap-5'>
-      
+    <section id='projects' className='md:px-5 lg:px-10 xl:px-50 mt-10 md:mt-16 lg:mt-20 scroll-mt-20 flex flex-col gap-5 md:gap-6 lg:gap-5'>
+
       {/* Web Development Section */}
       <header
         onClick={() => setProjectOpen(!projectOpen)}
@@ -54,7 +54,7 @@ const ProjectSection = () => {
           height={24}
           className={`text-dev-black transition-transform duration-300 ${projectOpen ? "rotate-90" : ""}`}
         />
-        <h2 className='text-[24px] md:text-[30px] lg:text-[38px] text-dev-black font-bold leading-tight tracking-normal'>
+        <h2 className='text-[24px] md:text-[30px] lg:text-[30px] xl:text-[38px] text-dev-black font-bold leading-tight tracking-normal'>
           Web Development Projects
         </h2>
       </header>
@@ -63,7 +63,7 @@ const ProjectSection = () => {
       <AnimatePresence>
         {projectOpen && (
           <motion.div
-            className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:gap-8 lg:gap-15'
+            className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 md:gap-8 lg:gap-8 xl:gap-15'
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -109,7 +109,7 @@ const ProjectSection = () => {
                       className='w-40 h-32'
                     />
                     <div className='flex flex-col gap-3'>
-                      <h3 className='text-body-lg-20 md:text-[20px] lg:text-[24px] font-bold'>{project.title}</h3>
+                      <h3 className='text-body-lg-20 md:text-[20px] lg:text-[20px] xl:text-[24px] font-bold'>{project.title}</h3>
                       <p className='text-body-xs-12 font-medium text-justify'>
                         {project.desc}
                       </p>
@@ -171,7 +171,7 @@ const ProjectSection = () => {
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="relative w-[90%] md:w-[80%] lg:w-[70%] h-[70%] bg-white rounded-lg overflow-hidden"
+              className="relative w-[90%] md:w-[80%] lg:w-[70%] xl:w-[70%] h-[70%] bg-white rounded-lg overflow-hidden"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
@@ -205,7 +205,7 @@ const ProjectSection = () => {
           height={24}
           className={`text-dev-black transition-transform duration-300 ${hardwareOpen ? "rotate-90" : ""}`}
         />
-        <h2 className='text-[24px] md:text-[30px] lg:text-[38px] text-dev-black font-bold leading-tight tracking-normal'>
+        <h2 className='text-[24px] md:text-[30px] lg:text-[30px] xl:text-[38px] text-dev-black font-bold leading-tight tracking-normal'>
           Hardware Services
         </h2>
       </header>
@@ -220,7 +220,7 @@ const ProjectSection = () => {
             transition={{ duration: 0.4, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start px-5 py-5'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 items-start px-5 py-5'>
               {hardwareProjects.map((hardware) => (
                 <motion.article
                   key={hardware.id}
