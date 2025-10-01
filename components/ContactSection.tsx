@@ -38,7 +38,7 @@ const ContactSection: React.FC = () => {
     }
   }
 
-  // JSON-LD schema untuk ContactPage
+  // JSON-LD schema
   const contactSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
@@ -60,8 +60,8 @@ const ContactSection: React.FC = () => {
   }
 
   return (
-    <section id="contact" className="px-5 md:px-50 mt-20 md:mt-25 w-full scroll-mt-32">
-      {/* Inject JSON-LD Schema.org */}
+    <section id="contact" className="px-5 md:px-8 lg:px-50 mt-20 md:mt-16 lg:mt-25 w-full scroll-mt-32">
+      {/* Inject JSON-LD */}
       <Script
         id="contact-schema"
         type="application/ld+json"
@@ -69,12 +69,13 @@ const ContactSection: React.FC = () => {
       />
 
       <Toaster position="top-right" reverseOrder={false} />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-2">
 
+      {/* Grid Utama */}
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-2">
 
         {/* Text / Contact Info */}
-        <div className="w-full md:w-152 h-auto px-2.5 order-2 md:order-2">
-          <div className="grid grid-cols-1 px-2.5 gap-y-4 md:gap-y-10 order-1 md:order-2">
+        <div className="w-full lg:w-152 h-auto px-2.5 order-2 lg:order-2">
+          <div className="grid grid-cols-1 px-2.5 gap-y-4 md:gap-y-6 lg:gap-y-10 order-1 lg:order-2">
             <motion.div
               className="px-2.5 py-2.5 gap-3 flex flex-col"
               initial={{ opacity: 0, y: 20 }}
@@ -83,7 +84,7 @@ const ContactSection: React.FC = () => {
               transition={{ duration: 0.6 }}
             >
               <p className="text-dev-blue font-bold text-body-xxs-10 tracking-[0.2em]">We’re here to help you.</p>
-              <h2 className="text-[24px] md:text-[48px] text-dev-black font-medium leading-tight tracking-normal">
+              <h2 className="text-[24px] md:text-[32px] lg:text-[48px] text-dev-black font-medium leading-tight tracking-normal">
                 <span className="font-bold">Start</span> your project with InfravaLabs <span className="font-bold">today</span>.
               </h2>
               <h5 className="text-body-sm-14 text-dev-grey font-medium text-justify">
@@ -115,10 +116,11 @@ const ContactSection: React.FC = () => {
             </motion.div>
           </div>
         </div>
+
         {/* FORM SIDE */}
         <motion.form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col px-2.5 md:px-12 py-2.5 order-2 md:order-1"
+          className="flex flex-col px-2.5 md:px-6 lg:px-12 py-2.5 order-2 lg:order-1"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}

@@ -13,7 +13,7 @@ interface MenuOverlayProps {
 
 const MenuOverlay: React.FC<MenuOverlayProps> = ({ links, activeId }) => {
   return (
-    <div className="bg-dev-white shadow-sm rounded-sm border border-gray-200 md:hidden w-[160px] absolute top-20 right-12 mt-1 z-20 group">
+    <div className="bg-dev-white shadow-sm rounded-sm border border-gray-200 lg:hidden w-[160px] absolute top-20 right-12 mt-1 z-20 group">
       <div className="p-1">
         {links.map((link, index) => (
           <div

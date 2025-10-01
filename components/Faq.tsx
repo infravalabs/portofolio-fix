@@ -77,8 +77,7 @@ const Faq = () => {
 
   
   return (
-    
-    <div id='faq' className="px-5 md:px-50 gap-2 mt-20 scroll-mt-32">
+    <div id='faq' className="px-5 md:px-10 lg:px-50 gap-2 mt-20 scroll-mt-32">
       {/* JSON-LD Schema.org for FAQ */}
       <Script
         id="faq-schema"
@@ -86,7 +85,7 @@ const Faq = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-1">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-10">
         {/* LEFT SIDE: Sticky Title & Description */}
         <motion.div
           className="flex flex-col px-2.5 py-2.5 md:gap-2 gap-1"
@@ -99,7 +98,9 @@ const Faq = () => {
             className="sticky top-20 px-2.5 py-1 md:py-2.5 flex flex-col justify-start"
             variants={itemVariants}
           >
-            <h2 className="text-dev-black text-[42px] font-bold mb-2">General FAQ’s</h2>
+            <h2 className="text-dev-black text-[32px] md:text-[38px] lg:text-[42px] font-bold mb-2">
+              General FAQ’s
+            </h2>
             <p className="text-dev-grey text-body-sm-14 font-medium md:text-justify">
               We’ve gathered the most frequent questions our clients ask, from
               website solutions to hardware support, to give you a clearer picture
@@ -110,7 +111,7 @@ const Faq = () => {
 
         {/* RIGHT SIDE: FAQ List */}
         <motion.ul
-          className="flex flex-col px-2.5 py-2 md:gap-2 gap-1 overflow-hidden"
+          className="flex flex-col px-2.5 py-2 md:gap-3 lg:gap-4 gap-2 overflow-hidden"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -129,7 +130,9 @@ const Faq = () => {
               variants={itemVariants}
             >
               <div className="flex justify-between items-center py-5">
-                <h5 className=" group-hover:text-dev-blue text-body-sm-14 font-semibold">{content.title}</h5>
+                <h5 className=" group-hover:text-dev-blue text-body-sm-14 font-semibold">
+                  {content.title}
+                </h5>
                 {openIndex === index ? (
                   <MinusCircleIcon width={24} height={24} className="text-white group-hover:text-dev-blue" />
                 ) : (

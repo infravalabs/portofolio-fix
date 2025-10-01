@@ -19,42 +19,12 @@ const ProjectSection = () => {
   ]
 
   const hardwareProjects = [
-    {
-      id: 1,
-      title: "Laptop Cleaning Service",
-      desc: "A professional deep cleaning and maintenance service that includes dust removal, cooling system optimization, and overall performance check to extend the device’s lifespan.",
-      img: "/hardware1.jpg"
-    },
-    {
-      id: 2,
-      title: "Keyboard Repair & Replacement",
-      desc: "Reliable solutions for damaged or unresponsive laptop keyboards. From single key fixes to full replacements, restoring functionality and comfort.",
-      img: "/hardware2.jpg"
-    },
-    {
-      id: 3,
-      title: "SSD Upgrade",
-      desc: "Enhance device performance with the latest solid-state drive technology. Enjoy faster boot times, smoother multitasking, and improved system responsiveness.",
-      img: "/hardware3.jpg"
-    },
-    {
-      id: 4,
-      title: "Battery Replacement",
-      desc: "Restore mobility and productivity with high-quality battery replacement, ensuring longer usage hours and reliable power on the go.",
-      img: "/hardware4.jpg"
-    },
-    {
-      id: 5,
-      title: "Screen Repair",
-      desc: "Professional screen repair and replacement service. Fixing cracks, display issues, and ensuring accurate color reproduction with premium panels.",
-      img: "/hardware5.jpg"
-    },
-    {
-      id: 6,
-      title: "GPU Thermal Service",
-      desc: "Specialized GPU thermal maintenance that prevents overheating, improves stability, and extends the overall lifespan of your graphics card.",
-      img: "/hardware6.jpg"
-    }
+    { id: 1, title: "Laptop Cleaning Service", desc: "A professional deep cleaning and maintenance service that includes dust removal, cooling system optimization, and overall performance check to extend the device’s lifespan.", img: "/hardware1.jpg" },
+    { id: 2, title: "Keyboard Repair & Replacement", desc: "Reliable solutions for damaged or unresponsive laptop keyboards. From single key fixes to full replacements, restoring functionality and comfort.", img: "/hardware2.jpg" },
+    { id: 3, title: "SSD Upgrade", desc: "Enhance device performance with the latest solid-state drive technology. Enjoy faster boot times, smoother multitasking, and improved system responsiveness.", img: "/hardware3.jpg" },
+    { id: 4, title: "Battery Replacement", desc: "Restore mobility and productivity with high-quality battery replacement, ensuring longer usage hours and reliable power on the go.", img: "/hardware4.jpg" },
+    { id: 5, title: "Screen Repair", desc: "Professional screen repair and replacement service. Fixing cracks, display issues, and ensuring accurate color reproduction with premium panels.", img: "/hardware5.jpg" },
+    { id: 6, title: "GPU Thermal Service", desc: "Specialized GPU thermal maintenance that prevents overheating, improves stability, and extends the overall lifespan of your graphics card.", img: "/hardware6.jpg" }
   ];
 
   const containerVariants = {
@@ -71,10 +41,8 @@ const ProjectSection = () => {
   const textColor = theme === "dark" ? "text-dev-blue" : "text-dev-light-blue";
   const bgColor = theme === "dark" ? "bg-gradient-to-b from-transparent to-dev-white" : "bg-gradient-to-b from-transparent to-dev-black";
   
-
   return (
-      
-    <section id='projects' className='md:px-50 mt-10 md:mt-20 scroll-mt-20 flex flex-col gap-5 md:gap-5'>
+    <section id='projects' className='md:px-10 lg:px-50 mt-10 md:mt-16 lg:mt-20 scroll-mt-20 flex flex-col gap-5 md:gap-6 lg:gap-5'>
       
       {/* Web Development Section */}
       <header
@@ -86,7 +54,7 @@ const ProjectSection = () => {
           height={24}
           className={`text-dev-black transition-transform duration-300 ${projectOpen ? "rotate-90" : ""}`}
         />
-        <h2 className='text-[24px] md:text-[38px] text-dev-black font-bold leading-tight tracking-normal'>
+        <h2 className='text-[24px] md:text-[30px] lg:text-[38px] text-dev-black font-bold leading-tight tracking-normal'>
           Web Development Projects
         </h2>
       </header>
@@ -95,7 +63,7 @@ const ProjectSection = () => {
       <AnimatePresence>
         {projectOpen && (
           <motion.div
-            className='grid grid-cols-1 md:grid-cols-2 md:gap-15'
+            className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 md:gap-8 lg:gap-15'
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -103,7 +71,7 @@ const ProjectSection = () => {
           >
             {/* LEFT SIDE */}
             <motion.article
-              className='flex flex-col gap-3 px-5 py-10 order-2 md:order-1'
+              className='flex flex-col gap-3 px-5 py-10 order-2 lg:order-1'
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
@@ -141,7 +109,7 @@ const ProjectSection = () => {
                       className='w-40 h-32'
                     />
                     <div className='flex flex-col gap-3'>
-                      <h3 className='text-body-lg-20 md:text-[24px] font-bold'>{project.title}</h3>
+                      <h3 className='text-body-lg-20 md:text-[20px] lg:text-[24px] font-bold'>{project.title}</h3>
                       <p className='text-body-xs-12 font-medium text-justify'>
                         {project.desc}
                       </p>
@@ -152,7 +120,7 @@ const ProjectSection = () => {
             </motion.article>
 
             {/* RIGHT SIDE */}
-            <div className="relative flex justify-center items-center order-1 md:order-2">
+            <div className="relative flex justify-center items-center order-1 lg:order-2">
               <Image
                 src={"/mac.png"}
                 alt="Macbook mockup"
@@ -203,7 +171,7 @@ const ProjectSection = () => {
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="relative w-[90%] md:w-[70%] h-[70%] bg-white rounded-lg overflow-hidden"
+              className="relative w-[90%] md:w-[80%] lg:w-[70%] h-[70%] bg-white rounded-lg overflow-hidden"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
@@ -237,7 +205,7 @@ const ProjectSection = () => {
           height={24}
           className={`text-dev-black transition-transform duration-300 ${hardwareOpen ? "rotate-90" : ""}`}
         />
-        <h2 className='text-[24px] md:text-[38px] text-dev-black font-bold leading-tight tracking-normal'>
+        <h2 className='text-[24px] md:text-[30px] lg:text-[38px] text-dev-black font-bold leading-tight tracking-normal'>
           Hardware Services
         </h2>
       </header>
@@ -252,7 +220,7 @@ const ProjectSection = () => {
             transition={{ duration: 0.4, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-6 items-start px-5 py-5'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start px-5 py-5'>
               {hardwareProjects.map((hardware) => (
                 <motion.article
                   key={hardware.id}
@@ -263,7 +231,6 @@ const ProjectSection = () => {
                 >
                   {/* FRONT */}
                   <div className="absolute w-full h-full backface-hidden shadow-xl flex flex-col items-start justify-center ">
-                    {/* Gambar */}
                     <Image 
                       src={hardware.img} 
                       alt={`${hardware.title} service illustration`} 
@@ -271,13 +238,8 @@ const ProjectSection = () => {
                       height={200} 
                       className="object-cover w-full h-full" 
                     />
-
-                    {/* Gradient + Content */}
                     <div className="absolute bottom-0 left-0 w-full h-15 z-10">
-                      {/* Gradient overlay */}
                       <div className={`absolute inset-0 ${bgColor} `}></div>
-
-                      {/* Content di atas gradient */}
                       <div className="relative z-20 px-5 py-3">
                         <h3 className={`text-lg font-semibold ${textColor}`}>
                           {hardware.title}
