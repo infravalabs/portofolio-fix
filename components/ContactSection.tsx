@@ -102,14 +102,14 @@ const ContactSection: React.FC = () => {
                 <EnvelopeIcon width={50} height={50} className="text-dev-blue"/>
                 <div className="flex flex-col py-2.5">
                   <h5 className="text-dev-grey text-body-sm-14 font-bold">Email</h5>
-                  <p className="text-dev-grey text-body-md-16 font-medium">infravalbas@gmail.com</p>
+                  <p className="text-dev-grey text-body-md-16 font-medium">infravalabs@gmail.com</p>
                 </div>
               </div>
               <div className="flex gap-5 items-center">
                 <PhoneIcon width={50} height={50} className="text-dev-blue"/>
                 <div className="flex flex-col py-2.5">
                   <h5 className="text-dev-grey text-body-sm-14 font-bold">Phone Number</h5>
-                  <p className="text-dev-grey text-body-md-16 font-medium">(0361) 123456</p>
+                  <p className="text-dev-grey text-body-md-16 font-medium">(+62) 89605699929</p>
                 </div>
               </div>
             </motion.div>

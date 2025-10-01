@@ -9,7 +9,7 @@ const teamMembers = [
   {
     name: "Yogi Prasetya",
     role: "Founder & FE",
-    img: "/yogi.jpg",
+    img: "/yogi2.jpg",
     linkedin: "/linkedin.png",
     github: "/github.png",
     linkedinUrl: "https://www.linkedin.com/in/yogiprasetyad/",
@@ -27,7 +27,7 @@ const teamMembers = [
   {
     name: "Ngurah",
     role: "Front End Developer",
-    img: "/ajay.png",
+    img: "/dekwah2.jpg",
     linkedin: "/linkedin.png",
     github: "/github.png",
     linkedinUrl: "https://www.linkedin.com/in/yogiprasetyad/",
@@ -70,17 +70,10 @@ const OurTeam = () => {
         </div>
         <div className="flex flex-col gap-5">
           <p className="text-body-sm-14 text-justify text-dev-grey">
-            Infrava Labs is a technology and digital innovation laboratory
-            focused on Artificial Intelligence, Machine Learning, and Web &
-            Mobile Development. We create impactful products, research, and
-            services designed to address the challenges of the digital era.
+            Driven by innovation and customer trust, Infrava Labs specializes in Web Development, Digital Wedding Invitations, and Hardware Repair. Our vision is to lead in practical digital solutions, while our mission is to deliver reliable, creative, and impactful services that empower both individuals and businesses.
           </p>
           <p className="text-body-sm-14 text-justify text-dev-grey">
-            Behind every breakthrough, there is a passionate and collaborative
-            team—consisting of Data Scientists, Machine Learning Engineers,
-            Software Developers, and UI/UX Designers—working hand in hand to
-            turn ideas into real solutions. For us, technology is not only about
-            code, but also about creativity, teamwork, and meaningful impact.
+            Behind Infrava Labs stands a committed team of Web Developers, Digital Invitation Creators, and Hardware Specialists. Together, we turn challenges into practical solutions. For us, technology is not just about functionality, it’s about creativity, teamwork, and delivering value that lasts.
           </p>
         </div>
       </div>
